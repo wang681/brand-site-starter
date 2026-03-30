@@ -1,0 +1,9 @@
+﻿{
+    "id":  "brand-site-starter",
+    "name":  "Brand Site Starter",
+    "category":  "corporate",
+    "version":  "1.0.0",
+    "license":  "MIT",
+    "description":  "For company websites with home, product, about, and contact pages.",
+    "createdAt":  "2026-03-30T22:38:58+08:00"
+}
