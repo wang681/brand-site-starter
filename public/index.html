@@ -3,138 +3,62 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Brand Site Starter - Preview</title>
+    <title>Brand Site Starter Preview</title>
     <style>
-      :root {
-        --accent: #7c3aed;
-        --text: #0f172a;
-        --muted: #475569;
-        --bg: #f8fafc;
-        --card: #ffffff;
-        --line: #e2e8f0;
-      }
-      * { box-sizing: border-box; }
-      body {
-        margin: 0;
-        font-family: "Segoe UI", -apple-system, BlinkMacSystemFont, sans-serif;
-        color: var(--text);
-        background: linear-gradient(180deg, #f8fafc 0%, #eef2ff 100%);
-      }
-      .wrap { max-width: 1100px; margin: 0 auto; padding: 0 20px; }
-      .nav {
-        display: flex; align-items: center; justify-content: space-between;
-        padding: 18px 0;
-      }
-      .brand { font-size: 20px; font-weight: 700; color: var(--text); }
-      .menu { display: flex; gap: 16px; color: var(--muted); font-size: 14px; }
-      .hero {
-        margin-top: 20px;
-        background: var(--card);
-        border: 1px solid var(--line);
-        border-radius: 18px;
-        padding: 42px;
-        box-shadow: 0 16px 50px rgba(15, 23, 42, 0.08);
-      }
-      h1 { margin: 0; font-size: 44px; line-height: 1.1; }
-      .sub { margin: 16px 0 24px; color: var(--muted); font-size: 20px; line-height: 1.5; max-width: 760px; }
-      .cta-row { display: flex; gap: 12px; flex-wrap: wrap; }
-      .btn {
-        border: none; border-radius: 10px; padding: 11px 16px; font-weight: 600;
-        cursor: pointer; text-decoration: none; display: inline-block;
-      }
-      .btn-primary { background: var(--accent); color: white; }
-      .btn-secondary { background: #eef2ff; color: #1e293b; }
-      .grid {
-        margin-top: 20px;
-        display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 14px;
-      }
-      .card {
-        background: var(--card);
-        border: 1px solid var(--line);
-        border-radius: 14px;
-        padding: 18px;
-      }
-      .card h3 { margin: 0 0 8px; font-size: 18px; }
-      .card p { margin: 0; color: var(--muted); font-size: 14px; line-height: 1.6; }
-      .section { margin-top: 20px; }
-      .section h2 { margin: 0 0 10px; font-size: 24px; }
-      .section p { margin: 0; color: var(--muted); line-height: 1.7; }
-      .feature-list { margin-top: 12px; display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 12px; }
-      .feature {
-        background: #f8fafc;
-        border: 1px solid var(--line);
-        border-radius: 12px;
-        padding: 14px;
-      }
-      .footer {
-        margin: 26px 0 36px;
-        text-align: center;
-        color: var(--muted);
-        font-size: 13px;
-      }
-      @media (max-width: 900px) {
-        h1 { font-size: 34px; }
-        .grid { grid-template-columns: 1fr; }
-        .feature-list { grid-template-columns: 1fr; }
-        .hero { padding: 24px; }
-      }
+      :root { --bg:#faf8ff; --ink:#201a36; --accent:#6d28d9; --line:#e8dcff; --muted:#5d5678; }
+      * { box-sizing:border-box; }
+      body { margin:0; font-family:"Segoe UI",sans-serif; background:var(--bg); color:var(--ink); }
+      .wrap { max-width:1140px; margin:0 auto; padding:0 22px 38px; }
+      .nav { padding:20px 0; display:flex; justify-content:space-between; align-items:center; }
+      .logo { font-size:24px; font-weight:800; }
+      .links { display:flex; gap:16px; color:#6a6490; font-size:14px; }
+      .hero { border:1px solid var(--line); border-radius:18px; padding:42px; background:#fff; position:relative; overflow:hidden; }
+      .hero:after { content:""; position:absolute; width:340px; height:340px; border-radius:50%; background:radial-gradient(circle, rgba(109,40,217,.18), rgba(109,40,217,0)); top:-180px; right:-140px; }
+      h1 { margin:0; font-size:48px; line-height:1.08; max-width:760px; }
+      .lead { margin-top:16px; color:var(--muted); font-size:20px; line-height:1.6; max-width:760px; }
+      .cta { margin-top:24px; display:flex; gap:12px; }
+      .btn { padding:11px 16px; border-radius:10px; text-decoration:none; font-weight:700; }
+      .a { background:var(--accent); color:#fff; }
+      .b { background:#f0e9ff; color:#5120a8; }
+      .row { margin-top:16px; display:grid; grid-template-columns:repeat(3,minmax(0,1fr)); gap:14px; }
+      .card { background:#fff; border:1px solid var(--line); border-radius:14px; padding:18px; }
+      .card h3 { margin:0 0 8px; font-size:20px; }
+      .card p { margin:0; color:var(--muted); line-height:1.7; }
+      .timeline { margin-top:14px; background:#fff; border:1px solid var(--line); border-radius:14px; padding:22px; }
+      .step { display:grid; grid-template-columns:90px 1fr; gap:16px; padding:10px 0; border-bottom:1px dashed #eadfff; }
+      .step:last-child{ border-bottom:0; }
+      .year { color:#6d28d9; font-weight:800; }
+      @media (max-width:900px){ .row{grid-template-columns:1fr;} h1{font-size:36px;} .step{grid-template-columns:1fr;} }
     </style>
   </head>
   <body>
     <div class="wrap">
       <header class="nav">
-        <div class="brand">Brand Site Starter</div>
-        <nav class="menu">
-          <span>Home</span>
-          <span>Features</span>
-          <span>Cases</span>
-          <span>Contact</span>
-        </nav>
+        <div class="logo">Lumina Studio</div>
+        <div class="links"><span>Brand</span><span>Work</span><span>Insights</span><span>Contact</span></div>
       </header>
 
-      <main class="hero">
-        <h1>Brand Site Starter</h1>
-        <p class="sub">A polished corporate website starter with value proposition and trust sections.</p>
-        <div class="cta-row">
-          <a href="#" class="btn btn-primary">Start With This Template</a>
-          <a href="#" class="btn btn-secondary">View Documentation</a>
-        </div>
-      </main>
-
-      <section class="grid section">
-        <article class="card">
-          <h3>Ready-to-Deploy Structure</h3>
-          <p>Comes with homepage sections, content blocks and a clean information hierarchy.</p>
-        </article>
-        <article class="card">
-          <h3>Cloudflare Friendly</h3>
-          <p>Designed to work with Pages, Workers, D1 and KV workflow in your platform strategy.</p>
-        </article>
-        <article class="card">
-          <h3>Commercial Reuse</h3>
-          <p>Template metadata and versioning are prepared for production deployment and updates.</p>
-        </article>
-      </section>
-
-      <section class="section card">
-        <h2>What You Can Customize</h2>
-        <p>Swap brand assets, update copy, connect forms, and map routes to your deployment pipeline.</p>
-        <div class="feature-list">
-          <div class="feature">Hero messaging and value proposition</div>
-          <div class="feature">Feature modules and media blocks</div>
-          <div class="feature">Case study and trust sections</div>
-          <div class="feature">Contact CTA and conversion area</div>
+      <section class="hero">
+        <h1>Build a credible brand site that explains value in seconds.</h1>
+        <p class="lead">A scenario-focused corporate template with clear messaging hierarchy, trust proof, and conversion-ready contact flow.</p>
+        <div class="cta">
+          <a class="btn a" href="#">Book Strategy Call</a>
+          <a class="btn b" href="#">See Case Deck</a>
         </div>
       </section>
 
-      <section class="section card">
-        <h2>Deployment Notes</h2>
-        <p>This preview demonstrates the visual template shell. Content and routes are applied by your deployment APIs in user accounts.</p>
+      <section class="row">
+        <article class="card"><h3>Positioning</h3><p>Sample copy block for market category, ICP, and differentiation statement.</p></article>
+        <article class="card"><h3>Capabilities</h3><p>List design, engineering and growth capabilities in a structured matrix format.</p></article>
+        <article class="card"><h3>Trust Layer</h3><p>Show client logos, quantified outcomes and social proof near primary CTA.</p></article>
       </section>
 
-      <footer class="footer">
-        Template preview generated for Mirror-X Template Factory
-      </footer>
+      <section class="timeline">
+        <h2 style="margin:0 0 10px;">Brand Story Timeline</h2>
+        <div class="step"><div class="year">2019</div><div>Founded as a boutique digital team focused on B2B narrative design.</div></div>
+        <div class="step"><div class="year">2022</div><div>Expanded into product marketing systems and lifecycle content operations.</div></div>
+        <div class="step"><div class="year">2026</div><div>Serving enterprise and startup portfolios across APAC, EU and North America.</div></div>
+      </section>
     </div>
   </body>
 </html>
